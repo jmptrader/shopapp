@@ -21,7 +21,7 @@ export default {
   },
   created: function () {
       this.$store.commit('changeIndexConf', {
-        isFooter: false,
+        isFooter: true,
         isSearch: false,
         isBack: true,
         isShare: false,

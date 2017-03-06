@@ -6,30 +6,47 @@
     <form action="#">
         <div class="ui-form-item ui-form-item-show  ui-border-b">
             <label for="#">账号</label>
-            <input type="text" value="" placeholder="输入账号">
+            <input type="text" value="" placeholder="输入账号" v-model="loginModel.username">
         </div>
         <div class="ui-form-item ui-form-item-show ui-border-b">
             <label for="#">密码</label>
-            <input type="text" value=""  placeholder="输入密码">
-        </div>
-        <div class="ui-btn-wrap">
-        	<button class="ui-btn-lg ui-btn-login">
-		        登录
-		    </button>
+            <input type="text" value=""  placeholder="输入密码" v-model="loginModel.password">
         </div>
     </form>
-    <div class="ui-flex ui-flex-pack-end ui-flex-align-center">
-      <router-link class="go2register" 
-      to="/regist">注册</router-link>
+    <div class="ui-btn-wrap">
+    	<button class="ui-btn-lg ui-btn-login" @click="go2login()">
+        登录
+      </button>
     </div>
+    <div class="ui-row">
+      <div class="ui-col ui-col-50">
+        <div class="ui-flex ui-flex-pack-start ui-flex-align-center">
+          <router-link class="go2register" 
+          to="/index">先逛逛</router-link>
+        </div>
+      </div>
+      <div class="ui-col ui-col-50">
+        <div class="ui-flex ui-flex-pack-end ui-flex-align-center">
+          <router-link class="go2register" 
+          to="/regist">注册</router-link>
+        </div>
+      </div>
+    </div>
+    
 
 </div>
 </template>
 
 <script>
+
 export default {
   data () {
-    return {
+    return{
+      loginUrl:'data.json',
+      loginModel: {
+        username:'',
+        password:'',
+      }
     }
   },
   created: function () {
@@ -41,6 +58,22 @@ export default {
         isHeader:false,
         title: '登录'
       })
+  },
+  methods:{
+    go2login:function () {
+      this.$http.post(this.loginUrl, this.loginModel)
+        .then((response) => {
+          var body = response.json()
+          this.msg = '登录成功！'
+          this.userName = body.userName
+          
+          sessionStorage.setItem('accessToken', body.access_token)
+          sessionStorage.setItem('userName', body.userName)
+          
+        }).catch(this.requestError)
+
+
+    }
   }
 }
 </script>
@@ -55,6 +88,7 @@ $fontcolor:#333;
 		color: $fontcolor;
 	}
   .go2register{
-    color:$fontcolor; 
+    color:$fontcolor;
+    font-size: 12px; 
   }
 </style>
