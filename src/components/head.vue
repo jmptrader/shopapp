@@ -1,20 +1,23 @@
 <template>
-	<header class="ui-header ui-header-stable ui-border-b">
+	<header class="ui-header ui-header-stable ui-border-b" v-show="isShowHeader">
 		<div v-show='isShowSearch'>
 			<div class="ui-row">
 				<div class="ui-col ui-col-10">
-					<i class="ui-icon-scan ui-txt-white"></i>
+					<i class="ui-icon-scan " ></i>
 				</div>
 				<div class="ui-col ui-col-80">
 					<app-search></app-search>
 				</div>
 				<div class="ui-col ui-col-10">
-					<i class="ui-icon-add-group ui-txt-white"></i>
+					<i class="ui-icon-add-group "></i>
 				</div>
 			</div>
 		</div>
 		<div v-show="!isShowSearch" class='ui-whitespace'>
-			<i class="ui-icon-return ui-txt-white" onclick="history.back()"></i><h1 class="ui-txt-white">{{title}}</h1>
+			<i class="ui-icon-return " 
+      v-show="isBack" 
+      onclick="history.back()"></i>
+      <h1 class="">{{title}}</h1>
 		</div>
 	</header>
 </template>
@@ -35,6 +38,9 @@ export default {
       },
       isBack: function () {
         return this.$store.state.comm.indexConf.isBack
+      },
+      isShowHeader:function () {
+        return this.$store.state.comm.indexConf.isHeader
       }
     },
     methods: {
@@ -52,7 +58,7 @@ export default {
 <style>
 @import "../../static/frozenui/css/frozen.css";
 .ui-header{
-	background: #E4B401;
+	background: #FED000;
 }
 </style>
 

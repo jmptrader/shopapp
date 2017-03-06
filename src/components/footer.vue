@@ -1,5 +1,5 @@
 <template>
-	<footer class="ui-footer ui-footer-stable ui-border-t foot-bg">
+	<footer class="ui-footer ui-footer-stable ui-border-t foot-bg" v-show="isShowFooter">
 	    <ul class="ui-tiled icon-lists" >
 	        <li v-bind:class="{actived:item.isActive}" 
 	        @click="toggle(item,$index)"
@@ -40,6 +40,11 @@ export default {
     	]
 
     }
+  },
+  computed:{
+    isShowFooter:function () {
+        return this.$store.state.comm.indexConf.isFooter
+      }
   },
   methods:{
 	  toggle:function (item,index) {

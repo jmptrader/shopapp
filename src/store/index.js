@@ -29,6 +29,7 @@ const store = new Vuex.Store({
         isSearch: true, // 是否显示搜索
         isBack: false,  // 是否显示返回
         isShare: false, // 是否显示分享
+        isHeader:true,// 是否显示头部
         title: '' // 标题
       }
     }

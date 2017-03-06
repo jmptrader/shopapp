@@ -8,24 +8,7 @@
 	<div class="ui-flex ui-flex-pack-center">
 		<p>{{msg}}</p>
 	</div>
-	<!-- 我的订单 -->
-	<ul class="ui-row">
-	    <li class="ui-col ui-col-33 ">
-	    	<div class="ui-flex ui-flex-pack-center">
-		    	<i class="ui-icon-order"></i>
-	    	</div>
-	    </li>
-	    <li class="ui-col ui-col-33 ">
-	    	<div class="ui-flex ui-flex-pack-center">
-		    	<i class="ui-icon-order"></i>
-	    	</div>
-	    </li>
-	    <li class="ui-col ui-col-33 ">
-	    	<div class="ui-flex ui-flex-pack-center">
-		    	<i class="ui-icon-order"></i>
-	    	</div>
-	    </li>
-	</ul>
+	
 </div>
 </template>
 
