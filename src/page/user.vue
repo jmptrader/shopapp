@@ -1,17 +1,43 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-  </div>
+<div class="app-user">
+	<div class="ui-flex ui-flex-pack-center">
+	    <div class="ui-avatar-lg">
+            <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+        </div>
+	</div>
+	<div class="ui-flex ui-flex-pack-center">
+		<p>{{msg}}</p>
+	</div>
+	<!-- 我的订单 -->
+	<ul class="ui-row">
+	    <li class="ui-col ui-col-33 ">
+	    	<div class="ui-flex ui-flex-pack-center">
+		    	<i class="ui-icon-order"></i>
+	    	</div>
+	    </li>
+	    <li class="ui-col ui-col-33 ">
+	    	<div class="ui-flex ui-flex-pack-center">
+		    	<i class="ui-icon-order"></i>
+	    	</div>
+	    </li>
+	    <li class="ui-col ui-col-33 ">
+	    	<div class="ui-flex ui-flex-pack-center">
+		    	<i class="ui-icon-order"></i>
+	    	</div>
+	    </li>
+	</ul>
+</div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
   data () {
     return {
-      msg: 'user'
+      msg: '1990_ever'
     }
   }
 }
 </script>
-
+<style lang='scss'>
+	@import '../../static/css/user.scss'
+</style>

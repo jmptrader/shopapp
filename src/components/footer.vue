@@ -1,9 +1,9 @@
 <template>
 	<footer class="ui-footer ui-footer-stable ui-border-t foot-bg">
 	    <ul class="ui-tiled icon-lists" >
-	        <li v-bind:class="{actived:isActive}" 
-	        @click="toggle()"
-	        v-for="item in items">
+	        <li v-bind:class="{actived:item.isActive}" 
+	        @click="toggle(item,$index)"
+	        v-for="(item,$index) in items">
 	        	<router-link :to=item.toRouter>
 		        	<i :class="item.iconClass"></i>
 		        	<span class="foot-text">{{ item.iconName }}</span>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   data () {
     return {
@@ -41,9 +42,14 @@ export default {
     }
   },
   methods:{
-	  toggle:function (isActive) {
-
-	  	// this.isActive = !this.isActive;
+	  toggle:function (item,index) {
+		this.$nextTick(function () {
+			this.items.forEach(function (item) {
+				// 设置对象的属性
+				Vue.set(item,'isActive',false);
+			})
+			Vue.set(item,'isActive',true);
+		})
 	  }
   }
 }

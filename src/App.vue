@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-	  <app-header></app-header>
+   <app-header></app-header>
     <!-- 渲染路径匹配到的组件，在created方法中定义默认路径 -->
-    <router-view></router-view> 
+    <section class="ui-container ui-center">
+      <router-view></router-view> 
+    </section>
     <app-footer></app-footer>
     <!-- <app-loading></app-loading> -->
   </div>
@@ -32,4 +34,6 @@ export default {
   }
 }
 </script>
-
+<style lang='scss'>
+  @import '../static/css/app.scss'
+</style>
