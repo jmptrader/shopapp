@@ -60,7 +60,7 @@
 	</section>
 	<!-- 热销商品 -->
 	<ul class="ui-grid-trisect ui-border-b">
-		<h2 class="ui-arrowlink">热销商品<span class="ui-panel-subtitle">1328条</span></h2>
+		<h2>热销商品</h2>
 	    <li>
 	        <div class="ui-grid-trisect-img">
 	            <span style="background-image:url(http://placeholder.qiniudn.com/190x284)"></span>
@@ -100,6 +100,15 @@ export default {
     return {
       msg: 'index'
     }
+  },
+  created:function () {
+  	// head的修改
+	this.$store.commit('changeIndexConf', {
+		isFooter: true,
+		isSearch: true,
+		isBack: false,
+		title: ''
+	})
   }
 }
 </script>

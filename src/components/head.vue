@@ -1,13 +1,22 @@
 <template>
-<header class="ui-header ui-header-stable ui-border-b">
-	<div class="app-header" v-show="!isShowSearch">
-    	<i class="ui-icon-return" onclick="history.back()"></i><h1>layout</h1>
-    </div>
-    <div class="ui-searchbar-wrap ui-border-b" v-show="isShowSearch">
-	    <app-serach></app-serach>
-	</div>    
-</header>
-	
+	<header class="ui-header ui-header-stable ui-border-b">
+		<div v-show='isShowSearch'>
+			<div class="ui-row">
+				<div class="ui-col ui-col-10">
+					<i class="ui-icon-scan ui-txt-white"></i>
+				</div>
+				<div class="ui-col ui-col-80">
+					<app-search></app-search>
+				</div>
+				<div class="ui-col ui-col-10">
+					<i class="ui-icon-add-group ui-txt-white"></i>
+				</div>
+			</div>
+		</div>
+		<div v-show="!isShowSearch" class='ui-whitespace'>
+			<i class="ui-icon-return ui-txt-white" onclick="history.back()"></i><h1 class="ui-txt-white">{{title}}</h1>
+		</div>
+	</header>
 </template>
 
 <script>
@@ -41,6 +50,9 @@ export default {
 }
 </script>
 <style>
-  @import "../../static/frozenui/css/frozen.css";
+@import "../../static/frozenui/css/frozen.css";
+.ui-header{
+	background: #E4B401;
+}
 </style>
 

@@ -1,5 +1,5 @@
 <template>
-<div class="ui-searchbar-wrap ui-border-b" v-show="isShowSearch">
+<div class="ui-searchbar-wrap ui-border-b">
     <div class="ui-searchbar ui-border-radius">
         <i class="ui-icon-search"></i>
         <div class="ui-searchbar-text">搜索号码（2-10位）</div>
@@ -20,5 +20,8 @@ export default {
 </script>
 <style>
   @import "../../static/frozenui/css/frozen.css";
+  .ui-searchbar-wrap{
+    background-color: transparent;
+  }
 </style>
 

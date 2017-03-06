@@ -35,6 +35,15 @@ export default {
     return {
       msg: '1990_ever'
     }
+  },
+  created: function () {
+      this.$store.commit('changeIndexConf', {
+        isFooter: false,
+        isSearch: false,
+        isBack: true,
+        isShare: false,
+        title: '个人信息'
+      })
   }
 }
 </script>
