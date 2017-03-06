@@ -1,15 +1,17 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-  </div>
+	<div class="ui-loading-block show">
+	    <div class="ui-loading-cnt">
+	        <i class="ui-loading-bright"></i>
+	        <p v-text="msg"></p>
+	    </div>
+	</div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: '马上就来'
     }
   }
 }
