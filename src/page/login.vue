@@ -33,18 +33,20 @@
         </div>
       </div>
     </div>
+    <p>{{totalMoney}}</p>
 
 </div>
 </section>
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   data () {
     return{
       name:'',
       password:'',
+      totalMoney:0,
     }
   },
   created: function () {
@@ -60,23 +62,17 @@ export default {
   methods:{
     go2login:function () {
       let url = this.$store.state.comm.apiUrl + 'islogin.json';
-      let params = 'username=' + this.name + '&password=' + this.password
-      this.$http.post(url,params)
-        .then(response => {
-          // sucess
-          alert(response.status);
-          // let uid = response.uid;
-          // if(response.result === 1){
-          //   this.$store.commit('isLogin',res.data[0])
-          //   router.push('/user/'+uid+'');
-          // }else{
-            
-          // }
-        },response =>{
-            // error
-        });
-
-
+      let params = 'username=' + this.name + '&password=' + this.password;
+      axios.get(url)
+      .then((retObj)=>{
+       if(retObj.status == 200){
+          
+         this.totalMoney = retObj.data.result.username;
+       }
+      })
+      .catch(function (error) {
+        alert('error');
+      })
     }
   }
 }

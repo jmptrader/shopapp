@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+// import axios from 'axios'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
+  // 定义状态
   state: {
     // 评论相关
     reply: {
@@ -76,7 +78,14 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-
+    // 封装一个ajax方法
+    // saveForm(context){
+    //   axios({
+    //     method:'post',
+    //     url:'/user',
+    //     data:context.state.
+    //   })
+    // }
   },
   getter: {
 

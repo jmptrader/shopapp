@@ -1,4 +1,8 @@
 {
-  "result":1,
-  "uid":"u123"
+  "status":1,
+  "result":{
+    "username":"ever",
+    "avatar":"img/avatar/001.jpg"
+  },
+  "message":""
 }
