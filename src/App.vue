@@ -2,9 +2,7 @@
   <div id="app">
    <app-header></app-header>
     <!-- 渲染路径匹配到的组件，在created方法中定义默认路径 -->
-    <section class="ui-container ui-center">
-      <router-view></router-view> 
-    </section>
+    <router-view></router-view> 
     <app-footer></app-footer>
     <!-- <app-loading></app-loading> -->
   </div>

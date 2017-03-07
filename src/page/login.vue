@@ -1,8 +1,9 @@
 <template>
+<section class="ui-container ui-center">
 <div class="ui-form ui-border-t">
-	<section class="ui-placehold-img">
-	    <span style="background-image:url(../../static/img/logo.png)"></span>
-	</section>
+	   <section class="ui-placehold-img">
+        <span style="background-image:url(../../static/img/logo.png)"></span>
+    </section>
     <form action="#">
         <div class="ui-form-item ui-form-item-show  ui-border-b">
             <label for="#">账号</label>
@@ -35,6 +36,7 @@
     
 
 </div>
+</section>
 </template>
 
 <script>
@@ -42,11 +44,12 @@
 export default {
   data () {
     return{
-      loginUrl:'data.json',
+      loginUrl:this.$store.state.comm.apiUrl + 'static/data.json',
       loginModel: {
         username:'',
         password:'',
-      }
+      },
+      demodata:'',
     }
   },
   created: function () {
@@ -61,16 +64,19 @@ export default {
   },
   methods:{
     go2login:function () {
-      this.$http.post(this.loginUrl, this.loginModel)
-        .then((response) => {
-          var body = response.json()
-          this.msg = '登录成功！'
-          this.userName = body.userName
+      this.$http.get(this.loginUrl)
+        .then((res) => {
+          // var body = response.json()
+          // this.msg = '登录成功！'
+          // this.userName = body.userName
           
-          sessionStorage.setItem('accessToken', body.access_token)
-          sessionStorage.setItem('userName', body.userName)
-          
-        }).catch(this.requestError)
+          // sessionStorage.setItem('accessToken', body.access_token)
+          // sessionStorage.setItem('userName', body.userName)
+          this.demodata = res.body;
+          alert(this.demodata);
+        },response =>{
+          alert('no');
+        })
 
 
     }

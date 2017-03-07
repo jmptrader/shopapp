@@ -1,22 +1,31 @@
 <template>
+<section class="ui-container ui-center">
 <div class="app-user">
-	<div class="ui-flex ui-flex-pack-center">
-	    <div class="ui-avatar-lg">
-            <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
-        </div>
-	</div>
-	<div class="ui-flex ui-flex-pack-center">
-		<p>{{msg}}</p>
-	</div>
-	
-</div>
-</template>
+  <div class="ui-flex ui-flex-pack-center">
+      <div class="ui-avatar-lg ">
+          <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+      </div>
+  </div>
 
+  <div class="ui-flex ui-flex-pack-center">
+    <p class="app-user-name">
+      ever
+    </p>
+  </div>
+
+  <div class="ui-row">
+    <div class="ui-col ui-col-25"><i class="ui-icon-order"></i>订单</div>
+    <div class="ui-col ui-col-25"><i class="ui-icon-emo"></i>我的菜谱</div>
+    <div class="ui-col ui-col-25"><i class="ui-icon-collect"></i>我的收藏</div>
+    <div class="ui-col ui-col-25"><i class="ui-icon-add"></i>更多</div>
+  </div>
+</div>
+</section>
+</template>
 <script>
 export default {
   data () {
     return {
-      msg: '1990_ever'
     }
   },
   created: function () {
@@ -25,11 +34,22 @@ export default {
         isSearch: false,
         isBack: true,
         isShare: false,
-        title: '个人信息'
+        isHeader:true,
+        isSet:true,
+        title: '个人中心'
       })
   }
 }
 </script>
 <style lang='scss'>
-	@import '../../static/css/user.scss'
+$maincolor:#FED000;
+$fontcolor:#333;
+.app-user{
+  width: 100%;
+  padding-top: 50px;
+}
+.app-user-name{
+  color: $fontcolor;
+  margin: 10px 0 50px;
+}
 </style>

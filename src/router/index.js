@@ -9,6 +9,7 @@ import Cart from '@/page/cart'
 import Order from '@/page/order'
 import Index from '@/page/index'
 import Goods from '@/page/goods'
+import Seting from '@/page/set'
 
 Vue.use(Router)
 
@@ -25,6 +26,7 @@ const routes = [
       {path: '/order/:id', name: 'order', component: Order},
       {path: '/index', name: 'index', component: Index},
       {path: '/goods/:id', name: 'goods', component: Goods},
+      {path: '/set', name: 'set', component: Seting},
     ]
   }
 ]

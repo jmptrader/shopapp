@@ -62,5 +62,24 @@ export default {
 
 <style lang='scss'>
 	@import '../../static/frozenui/css/frozen.css';
-	@import '../../static/css/foot.scss';
+  $color:#E4B401;
+
+a{color:#000;}
+.icon-lists [class^="ui-icon-"]{
+  color:#000;
+  line-height:32px;
+}
+.icon-lists .actived [class^="ui-icon-"]{
+  color:#C9A521;
+}
+.foot-bg{
+  li.actived{
+    a{
+      color:#C9A521;
+    }
+  }
+}
+.foot-text{
+  font-size:10px;
+}
 </style>

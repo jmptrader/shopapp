@@ -13,12 +13,28 @@
 				</div>
 			</div>
 		</div>
-		<div v-show="!isShowSearch" class='ui-whitespace'>
-			<i class="ui-icon-return " 
-      v-show="isBack" 
-      onclick="history.back()"></i>
-      <h1 class="">{{title}}</h1>
-		</div>
+
+    <div v-show='!isShowSearch'>
+      <div class="ui-row">
+        <div class="ui-col ui-col-10">
+          <i class="ui-icon-prev" 
+            v-show="isBack" 
+            onclick="history.back()"
+            ></i>
+        </div>
+        <div class="ui-col ui-col-80 ">
+          <p class="ui-flex ui-flex-pack-center">
+          {{title}}
+          </p>
+        </div>
+        <div class="ui-col ui-col-10">
+          <i class="ui-icon-set" 
+            v-show="isSet" 
+            ></i>
+        </div>
+      </div>
+    </div>
+
 	</header>
 </template>
 
@@ -38,6 +54,9 @@ export default {
       },
       isBack: function () {
         return this.$store.state.comm.indexConf.isBack
+      },
+      isSet:function () {
+        return this.$store.state.comm.indexConf.isSet
       },
       isShowHeader:function () {
         return this.$store.state.comm.indexConf.isHeader
