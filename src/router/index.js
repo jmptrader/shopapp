@@ -20,7 +20,7 @@ const routes = [
     children: [
     // 动态路由匹配
       {path: '/login', name: 'login', component: Login},
-      {path: '/User', name: 'user', component: User},
+      {path: '/User/:uid', name: 'user', component: User},
       {path: '/regist', name: 'regist', component: Regist},
       {path: '/cart', name: 'cart', component: Cart},
       {path: '/order/:id', name: 'order', component: Order},

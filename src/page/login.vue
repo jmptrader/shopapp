@@ -7,11 +7,11 @@
     <form action="#">
         <div class="ui-form-item ui-form-item-show  ui-border-b">
             <label for="#">账号</label>
-            <input type="text" value="" placeholder="输入账号" v-model="loginModel.username">
+            <input type="text" value="" placeholder="输入账号" v-model="name">
         </div>
         <div class="ui-form-item ui-form-item-show ui-border-b">
             <label for="#">密码</label>
-            <input type="text" value=""  placeholder="输入密码" v-model="loginModel.password">
+            <input type="text" value=""  placeholder="输入密码" v-model="password">
         </div>
     </form>
     <div class="ui-btn-wrap">
@@ -33,7 +33,6 @@
         </div>
       </div>
     </div>
-    
 
 </div>
 </section>
@@ -44,12 +43,8 @@
 export default {
   data () {
     return{
-      loginUrl:this.$store.state.comm.apiUrl + 'static/data.json',
-      loginModel: {
-        username:'',
-        password:'',
-      },
-      demodata:'',
+      name:'',
+      password:'',
     }
   },
   created: function () {
@@ -64,19 +59,22 @@ export default {
   },
   methods:{
     go2login:function () {
-      this.$http.get(this.loginUrl)
-        .then((res) => {
-          // var body = response.json()
-          // this.msg = '登录成功！'
-          // this.userName = body.userName
-          
-          // sessionStorage.setItem('accessToken', body.access_token)
-          // sessionStorage.setItem('userName', body.userName)
-          this.demodata = res.body;
-          alert(this.demodata);
+      let url = this.$store.state.comm.apiUrl + 'islogin.json';
+      let params = 'username=' + this.name + '&password=' + this.password
+      this.$http.post(url,params)
+        .then(response => {
+          // sucess
+          alert(response.status);
+          // let uid = response.uid;
+          // if(response.result === 1){
+          //   this.$store.commit('isLogin',res.data[0])
+          //   router.push('/user/'+uid+'');
+          // }else{
+            
+          // }
         },response =>{
-          alert('no');
-        })
+            // error
+        });
 
 
     }

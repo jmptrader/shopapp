@@ -9,12 +9,12 @@
 
   <div class="ui-flex ui-flex-pack-center">
     <p class="app-user-name">
-      ever
+      vip:{{uid}}
     </p>
   </div>
 
   <div class="ui-row">
-    <div class="ui-col ui-col-25"><i class="ui-icon-order"></i>订单</div>
+    <div class="ui-col ui-col-25"><router-link to="/order/123"><i class="ui-icon-order"></i>订单</router-link></div>
     <div class="ui-col ui-col-25"><i class="ui-icon-emo"></i>我的菜谱</div>
     <div class="ui-col ui-col-25"><i class="ui-icon-collect"></i>我的收藏</div>
     <div class="ui-col ui-col-25"><i class="ui-icon-add"></i>更多</div>
@@ -38,6 +38,7 @@ export default {
         isSet:true,
         title: '个人中心'
       })
+      let uid = this.$route.params.id;
   }
 }
 </script>

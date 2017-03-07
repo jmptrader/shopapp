@@ -22,7 +22,7 @@ const store = new Vuex.Store({
         memberId: '',
         userData: ''
       },
-      apiUrl: 'http://localhost:8080/',
+      apiUrl: 'http://localhost:8080/static/',
       imgUrl: 'http://www.sherlochao.com:9091/filebase',
       indexConf: {
         isFooter: true, // 是否显示底部

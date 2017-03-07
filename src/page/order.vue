@@ -13,11 +13,13 @@
 
 <script>
 export default {
-  name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
+  },
+  created:function () {
+  	let id = this.$route.params.id
+  	// alert(id);
   }
 }
 </script>

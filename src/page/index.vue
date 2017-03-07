@@ -1,5 +1,5 @@
 <template>
-	<div class="index-wrap">
+	<div class="app-index">
 	<app-banner></app-banner>	
 	<!-- 热门推荐 -->
 	<ul class="ui-grid-halve">
@@ -58,4 +58,8 @@ export default {
   }
 }
 </script>
-
+<style>
+	.app-index{
+		margin-top: 45px;
+	}
+</style>
