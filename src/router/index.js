@@ -2,14 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import App from '../app'
-import Login from '@/page/login'
-import Regist from '@/page/regist'
-import User from '@/page/user'
-import Cart from '@/page/cart'
-import Order from '@/page/order'
-import Index from '@/page/index'
-import Goods from '@/page/goods'
-import Seting from '@/page/set'
+import Login from '@/page/login'  // 登陆
+import Regist from '@/page/regist' // 注册
+import User from '@/page/user'   // 用户中心
+import Cart from '@/page/cart'   // 购物车
+import Order from '@/page/order'   // 订单
+import Index from '@/page/index'  // 首页
+import Goods from '@/page/goods'  // 商品详情页
 
 Vue.use(Router)
 
@@ -27,7 +26,6 @@ const routes = [
       {path: '/order/:id', name: 'order', component: Order},
       {path: '/index', name: 'index', component: Index},
       {path: '/goods/:id', name: 'goods', component: Goods},
-      {path: '/set', name: 'set', component: Seting},
     ]
   }
 ]

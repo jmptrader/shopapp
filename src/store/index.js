@@ -29,7 +29,6 @@ const store = new Vuex.Store({
         isFooter: true, // 是否显示底部
         isSearch: true, // 是否显示搜索
         isBack: false,  // 是否显示返回
-        isSet: false,  // 是否显示设置
         isShare: false, // 是否显示分享
         isHeader:true,// 是否显示头部
         title: '' // 标题

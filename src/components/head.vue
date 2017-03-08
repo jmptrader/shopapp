@@ -28,12 +28,7 @@
           </p>
         </div>
         <div class="ui-col ui-col-10">
-        <router-link to="/set">
-          <i class="ui-icon-set" 
-              v-show="isSet" 
-              ></i>
-        </router-link>
-          
+        
         </div>
       </div>
     </div>
@@ -58,9 +53,7 @@ export default {
       isBack: function () {
         return this.$store.state.comm.indexConf.isBack
       },
-      isSet:function () {
-        return this.$store.state.comm.indexConf.isSet
-      },
+      
       isShowHeader:function () {
         return this.$store.state.comm.indexConf.isHeader
       }
