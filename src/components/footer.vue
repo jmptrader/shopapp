@@ -67,7 +67,6 @@ export default {
 a{color:#000;}
 .icon-lists [class^="ui-icon-"]{
   color:#000;
-  line-height:32px;
 }
 .icon-lists .actived [class^="ui-icon-"]{
   color:#C9A521;
@@ -80,6 +79,8 @@ a{color:#000;}
   }
 }
 .foot-text{
+  display: block;
   font-size:10px;
+  margin-top:-10px;
 }
 </style>

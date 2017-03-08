@@ -14,12 +14,14 @@
     </p>
   </div>
 
-  <div class="ui-row">
-    <div class="ui-col ui-col-25"><router-link to="/order/123"><i class="ui-icon-order"></i>订单</router-link></div>
-    <div class="ui-col ui-col-25"><i class="ui-icon-emo"></i>我的菜谱</div>
-    <div class="ui-col ui-col-25"><i class="ui-icon-collect"></i>我的收藏</div>
-    <div class="ui-col ui-col-25"><i class="ui-icon-add"></i>更多</div>
-  </div>
+  <ul class="ui-list-text border-list ui-border-t app-user-text">
+      <li class=" ui-border-b ui-arrowlink">
+        <router-link to="/order/123">我的订单</router-link>
+      </li>
+      <li class=" ui-border-b ui-arrowlink">退出登陆</li>
+  </ul>
+
+  
 </div>
 </section>
 </template>
@@ -38,7 +40,6 @@ export default {
         isBack: true,
         isShare: false,
         isHeader:true,
-        isSet:true,
         title: '个人中心'
       })
       let userMsg = localStorage.getItem("userMsg");
@@ -57,5 +58,9 @@ $fontcolor:#333;
 .app-user-name{
   color: $fontcolor;
   margin: 10px 0 50px;
+}
+.app-user-text{
+  text-align: left;
+  text-indent: 20px;
 }
 </style>
