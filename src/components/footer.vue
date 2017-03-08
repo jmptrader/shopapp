@@ -34,7 +34,7 @@ export default {
     		{
     			iconClass:'ui-icon-personal',
     			iconName:'我的',
-    			toRouter:'/user/123',
+    			toRouter:'/user',
     			isActive:false
     		}
     	]

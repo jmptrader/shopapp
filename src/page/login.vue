@@ -80,7 +80,7 @@ export default {
             this.msg = retObj.data.message;
             // 跳转
             this.$store.commit('isLogin', retObj.data);
-            router.push({ path: 'user/'+retObj.data.result.username })
+            router.push({ path: 'user/'})
           }else{
             // 提示失败
             this.tipshow = true;
