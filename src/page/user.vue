@@ -3,13 +3,14 @@
 <div class="app-user">
   <div class="ui-flex ui-flex-pack-center">
       <div class="ui-avatar-lg ">
-          <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+          <span v-bind:style="{ background:'url(' + avatar +')' }">
+          </span>
       </div>
   </div>
 
   <div class="ui-flex ui-flex-pack-center">
     <p class="app-user-name">
-      vip:{{uid}}
+    {{uname}}
     </p>
   </div>
 
@@ -26,6 +27,8 @@
 export default {
   data () {
     return {
+      avatar:'',
+      uname:'',
     }
   },
   created: function () {
@@ -38,7 +41,9 @@ export default {
         isSet:true,
         title: '个人中心'
       })
-      let uid = this.$route.params.id;
+      let userMsg = localStorage.getItem("userMsg");
+      this.avatar = this.$store.state.comm.apiUrl + JSON.parse(userMsg).result.avatar;
+      this.uname = JSON.parse(userMsg).result.username;
   }
 }
 </script>

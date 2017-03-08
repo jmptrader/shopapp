@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -65,7 +64,7 @@ const store = new Vuex.Store({
       Object.assign(state.comm.indexConf, data)
     },
     isLogin: (state,data) => {
-      localStorage.setItem('memberId',data.memberId)
+      localStorage.setItem('memberId',data.result.userid)
       localStorage.setItem('userMsg',JSON.stringify(data))
       state.comm.login.memberId = localStorage.getItem('memberId')
       state.comm.login.userData = JSON.parse(localStorage.getItem('userMsg'))
@@ -78,14 +77,7 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    // 封装一个ajax方法
-    // saveForm(context){
-    //   axios({
-    //     method:'post',
-    //     url:'/user',
-    //     data:context.state.
-    //   })
-    // }
+    
   },
   getter: {
 
