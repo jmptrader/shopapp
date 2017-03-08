@@ -13,6 +13,7 @@ import Seting from '@/page/set'
 
 Vue.use(Router)
 
+// 1、定义路由
 const routes = [
   {
     path: '/',
@@ -30,18 +31,22 @@ const routes = [
     ]
   }
 ]
+
+// 2、创建路由实例，传配置
 const router = new Router({
   routes, // short for routes: routes
   linkActiveClass: 'active',  // router-link的选中状态的class，也有一个默认的值
   history: true
 })
-// router.beforeEach(function (to,from,next) {
-//   var userMsg = localStorage.getItem('userMsg')
-//   if(to.path === '/home'){
-//     if(!userMsg){
-//       next({ path: '/login' })
-//     }
-//   }
-//   next()
-// })
+router.beforeEach(function (to,from,next) {
+  var userMsg = localStorage.getItem('userMsg')
+  if(to.path === '/home'){
+    if(!userMsg){
+      next({ path: '/login' })
+    }
+  }
+  next()
+})
+
+// 3、挂载根实例
 export default router
