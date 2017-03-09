@@ -6,32 +6,22 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   // 定义状态
   state: {
-    // 评论相关
-    reply: {
-      isComment: false, // 开启评论,
-      name: '',
-      articleId: '',
-      commentId: '',
-      type: 'comment',  // reply or comment
-      content: null,
-      comment: {}
-    },
     // 公共
     comm: {
       loading: false,
+      back2top: false,
       login: {
         memberId: '',
         userData: ''
       },
       apiUrl: 'http://localhost:8080/static/',
-      imgUrl: 'http://www.sherlochao.com:9091/filebase',
+      imgUrl: 'http://localhost:8080/static/img',
       indexConf: {
-        isFooter: true, // 是否显示底部
-        isSearch: true, // 是否显示搜索
-        isBack: false,  // 是否显示返回
-        isShare: false, // 是否显示分享
         isHeader:true,// 是否显示头部
-        title: '' // 标题
+        isSearch: true, // 是否显示搜索
+        isLogo : true, // 是否显示logo
+        title: '' ,// 标题
+        isFooter: true, // 是否显示底部
       }
     }
   },

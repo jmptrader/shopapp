@@ -19,6 +19,7 @@ export default {
 	this.$store.commit('changeIndexConf', {
 		isFooter: true,
 		isSearch: true,
+		isHeader:true,
 		isBack: false,
 		title: ''
 	})

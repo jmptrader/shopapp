@@ -2,14 +2,18 @@
 	<header class="ui-header ui-header-stable ui-border-b" v-show="isShowHeader">
 		<div v-show='isShowSearch'>
 			<div class="ui-row">
-				<div class="ui-col ui-col-10">
-					<i class="ui-icon-scan " ></i>
+				<div class="ui-col ui-col-20">
+					<img src="../assets/logo.png" 
+          alt="" 
+          class="logo"
+          v-show="isLogo">
+          <i class="ui-icon-prev" 
+            onclick="history.back()"
+            v-show="!isLogo"
+            ></i>
 				</div>
 				<div class="ui-col ui-col-80">
 					<app-search></app-search>
-				</div>
-				<div class="ui-col ui-col-10">
-					<i class="ui-icon-add-group "></i>
 				</div>
 			</div>
 		</div>
@@ -18,7 +22,6 @@
       <div class="ui-row">
         <div class="ui-col ui-col-10">
           <i class="ui-icon-prev" 
-            v-show="isBack" 
             onclick="history.back()"
             ></i>
         </div>
@@ -26,9 +29,6 @@
           <p class="ui-flex ui-flex-pack-center">
           {{title}}
           </p>
-        </div>
-        <div class="ui-col ui-col-10">
-        
         </div>
       </div>
     </div>
@@ -50,8 +50,8 @@ export default {
       title: function () {
         return this.$store.state.comm.indexConf.title
       },
-      isBack: function () {
-        return this.$store.state.comm.indexConf.isBack
+      isLogo: function () {
+        return this.$store.state.comm.indexConf.isLogo
       },
       
       isShowHeader:function () {
@@ -62,8 +62,6 @@ export default {
       goBack: function () {
         history.go(-1)
       },
-      add: function () {
-      }
     },
     components:{
 	   appSearch:Search,
@@ -74,6 +72,10 @@ export default {
 @import "../../static/frozenui/css/frozen.css";
 .ui-header{
 	background: #FED000;
+}
+.logo{
+  display: block;
+  width: 100%;
 }
 </style>
 
