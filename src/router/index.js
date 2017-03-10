@@ -37,7 +37,7 @@ const router = new Router({
 })
 router.beforeEach(function (to,from,next) {
   var userMsg = localStorage.getItem('userMsg')
-  if(to.path === '/user'){
+  if(to.path === '/user' || to.path === '/publish'){
     if(!userMsg){
       next({ path: '/login' })
     }

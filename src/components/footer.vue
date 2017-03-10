@@ -6,7 +6,7 @@
 	        v-for="(item,$index) in items">
 	        	<router-link :to=item.toRouter>
 		        	<i :class="item.iconClass"></i>
-		        	<span class="foot-text">{{ item.iconName }}</span>
+		        	<span class="foot-text" v-text='item.iconName'></span>
 	        	</router-link>
         	</li>
 	    </ul>
@@ -26,9 +26,9 @@ export default {
     			isActive:true
     		},
     		{
-    			iconClass:'ui-icon-cart',
-    			iconName:'购物车',
-    			toRouter:'/cart',
+    			iconClass:'ui-icon-add',
+    			iconName:'发布',
+    			toRouter:'/publish',
     			isActive:false
     		},
     		{
@@ -48,39 +48,37 @@ export default {
   },
   methods:{
 	  toggle:function (item,index) {
-		this.$nextTick(function () {
-			this.items.forEach(function (item) {
-				// 设置对象的属性
-				Vue.set(item,'isActive',false);
-			})
-			Vue.set(item,'isActive',true);
-		})
+      // 数据修改后，立刻生效
+  		this.$nextTick(function () {
+  			this.items.forEach(function (item) {
+  				Vue.set(item,'isActive',false);
+  			})
+  			Vue.set(item,'isActive',true);
+  		})
 	  }
   }
 }
 </script>
-
 <style lang='scss'>
-	@import '../../static/frozenui/css/frozen.css';
-  $color:#E4B401;
-
+@import '../../static/frozenui/css/frozen.css';
+$color:#E4B401;
 a{color:#000;}
 .icon-lists [class^="ui-icon-"]{
   color:#000;
 }
 .icon-lists .actived [class^="ui-icon-"]{
-  color:#C9A521;
+  color:$color;
 }
 .foot-bg{
   li.actived{
     a{
-      color:#C9A521;
+      color:$color;
     }
   }
 }
 .foot-text{
   display: block;
-  font-size:10px;
-  margin-top:-10px;
+  font-size:8px;
+  margin-top:-9px;
 }
 </style>

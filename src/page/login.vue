@@ -32,9 +32,7 @@
       </div>
     </div>
     <!-- 登录成功提示 -->
-    <div class="ui-poptips ui-poptips-success" v-show="tipshow">
-        <div class="ui-poptips-cnt"><i></i>{{ msg }}</div>
-    </div>
+    <app-tips></app-tips>
 </div>
 </section>
 </template>
@@ -42,21 +40,18 @@
 <script>
 import axios from 'axios'
 import router from '../router'
+import Tips from '@/components/tips'
 export default {
   data () {
     return {
       name:'',
       pwd:'',
       msg:'',
-      tipshow:false
     }
   },
   created: function () {
       this.$store.commit('changeIndexConf', {
         isFooter: false,
-        isSearch: false,
-        isBack: false,
-        isShare: false,
         isHeader:false,
         title: '登录'
       })
@@ -75,16 +70,11 @@ export default {
         // 返回值成功
        if(retObj.status == 200){
           if(retObj.data.status === 1){
-            // 提示成功
-            this.tipshow = true;
-            this.msg = retObj.data.message;
             // 跳转
+            alert( "欢迎" + localStorage.getItem('memberId'));
             this.$store.commit('isLogin', retObj.data);
-            router.push({ path: 'user/'})
+            router.push({ path: 'user'})
           }else{
-            // 提示失败
-            this.tipshow = true;
-            this.msg = retObj.data.message;
           }
        }
       })
@@ -93,6 +83,9 @@ export default {
         console.log(error);
       })
     }
+  },
+  components:{
+    appTips:Tips,
   }
 }
 </script>

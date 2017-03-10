@@ -3,6 +3,7 @@
 		<div v-show='isShowSearch'>
 			<div class="ui-row">
 				<div class="ui-col ui-col-20">
+          <div class="app-center">
 					<img src="../assets/logo.png" 
           alt="" 
           class="logo"
@@ -11,6 +12,7 @@
             onclick="history.back()"
             v-show="!isLogo"
             ></i>
+            </div>
 				</div>
 				<div class="ui-col ui-col-80">
 					<app-search></app-search>
@@ -41,6 +43,7 @@ import Search from '@/components/search'
 export default {
   data () {
     return {
+      logourl:'../assets/logo.png'
     }
   },
   computed: {
@@ -74,8 +77,12 @@ export default {
 	background: #FED000;
 }
 .logo{
-  display: block;
+  display: inline-block;
+  height: 40px;
+}
+.app-center{
   width: 100%;
+  text-align: center;
 }
 </style>
 

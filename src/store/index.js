@@ -26,19 +26,7 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
-    /*
-     * 评论回复
-     * @param name 回复的用户名
-     * */
-    reply: (state, data) => {
-      if (data.name === state.reply.name && state.reply.isComment && data.commentId === state.reply.commentId) {
-        state.reply.isComment = false
-      } else {
-        state.reply.name = data.name
-        state.reply.commentId = data.commentId
-        state.reply.isComment = true
-      }
-    },
+    
     /*
      * loading的显示
      * */
@@ -47,7 +35,8 @@ const store = new Vuex.Store({
     },
     /*
      * 修改header的信息
-     *
+     *Object.assign() 方法用于将所有可枚举的属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
+     *Object.assign(target, ...sources)
      * */
     changeIndexConf: (state, data) => {
       Object.assign(state.comm.indexConf, data)
