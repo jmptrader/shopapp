@@ -39,7 +39,6 @@
 
 <script>
 import axios from 'axios'
-import router from '../router'
 import Tips from '@/components/tips'
 export default {
   data () {
@@ -73,7 +72,7 @@ export default {
             // 跳转
             console.log( "欢迎" + localStorage.getItem('result'));
             this.$store.commit('isLogin', retObj.data);
-            router.push({ path: 'user'})
+            this.$router.push({ path: 'user'})
           }else{
           }
        }
