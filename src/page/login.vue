@@ -71,7 +71,7 @@ export default {
        if(retObj.status == 200){
           if(retObj.data.status === 1){
             // 跳转
-            alert( "欢迎" + localStorage.getItem('memberId'));
+            console.log( "欢迎" + localStorage.getItem('result'));
             this.$store.commit('isLogin', retObj.data);
             router.push({ path: 'user'})
           }else{
