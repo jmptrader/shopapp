@@ -24,7 +24,7 @@ const routes = [
       {path: '/publish', name: 'publish' , component: Publish,meta:{requireAuth:true}},
       {path: '/login', name: 'login', component: Login},
       {path: '/regist', name: 'regist', component: Regist},
-      {path: '/Menu/:id' , name: 'menu' , component:Menu},
+      {path: '/Menu' , name: 'menu' , component:Menu},
       {path: '/List' , name: 'list' , component:List}
     ]
   }
