@@ -45,18 +45,14 @@ const router = new Router({
  */
 router.beforeEach(function (to,from,next) {
   // 判断该路由是否需要登录权限
-  if(to.meta.requireAuth){
-    if(store.state.token){
-      next();
-    }else{
-      next({
-        path:'/login',
-        query:{redirect:to.fullPath}
-      })
+  var userMsg = localStorage.getItem('userMsg')
+  if(to.path === '/user' || to.push === '/publish'){
+    if(!userMsg){
+      next({ path: '/login' })
     }
-  }else{
-    next();
   }
+  next()
+
 })
 
 

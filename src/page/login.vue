@@ -32,7 +32,7 @@
       </div>
     </div>
     <!-- 登录成功提示 -->
-    <app-tips></app-tips>
+    <!-- <app-tips></app-tips> -->
 </div>
 </section>
 </template>
