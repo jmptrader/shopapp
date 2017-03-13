@@ -1,23 +1,7 @@
 <template>
-	<header class="ui-header ui-header-stable ui-border-b" v-show="isShowHeader">
+	<header class="ui-header ui-header-stable ui-border-b no-padding" v-show="isShowHeader">
 		<div v-show='isShowSearch'>
-			<div class="ui-row">
-				<div class="ui-col ui-col-20">
-          <div class="app-center">
-					<img src="../assets/logo.png" 
-          alt="" 
-          class="logo"
-          v-show="isLogo">
-          <i class="ui-icon-prev" 
-            onclick="history.back()"
-            v-show="!isLogo"
-            ></i>
-            </div>
-				</div>
-				<div class="ui-col ui-col-80">
-					<app-search></app-search>
-				</div>
-			</div>
+			<app-search></app-search>
 		</div>
 
     <div v-show='!isShowSearch'>
@@ -53,10 +37,6 @@ export default {
       title: function () {
         return this.$store.state.comm.indexConf.title
       },
-      isLogo: function () {
-        return this.$store.state.comm.indexConf.isLogo
-      },
-      
       isShowHeader:function () {
         return this.$store.state.comm.indexConf.isHeader
       }
@@ -71,18 +51,5 @@ export default {
 	}
 }
 </script>
-<style>
-@import "../../static/frozenui/css/frozen.css";
-.ui-header{
-	background: #FED000;
-}
-.logo{
-  display: inline-block;
-  height: 40px;
-}
-.app-center{
-  width: 100%;
-  text-align: center;
-}
-</style>
+
 

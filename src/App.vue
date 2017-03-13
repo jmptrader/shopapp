@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-   <app-header></app-header>
-    <!-- 渲染路径匹配到的组件，在created方法中定义默认路径 -->
+    <app-header></app-header>
     <router-view></router-view> 
     <app-footer></app-footer>
-    <!-- <app-loading></app-loading> -->
   </div>
 </template>
 
@@ -16,7 +14,6 @@ import Loading from '@/components/loading'
 export default {
   data:function () {
     return {
-      name :'ever'
     }
   },
   created: function () {
@@ -33,5 +30,6 @@ export default {
 }
 </script>
 <style lang='scss'>
-  @import '../static/css/app.scss'
+  @import "../static/frozenui/css/frozen.css";
+  @import '../static/css/app.scss';
 </style>

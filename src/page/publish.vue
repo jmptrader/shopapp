@@ -12,7 +12,7 @@
 		    </form>
 
 		    <div class="ui-btn-wrap">
-			    <button class="ui-btn-lg">
+			    <button class="ui-btn-lg" @click="publish">
 			        确定
 			    </button>
 			</div>
@@ -20,7 +20,6 @@
 	</div>
 </template>
 <script>
-import axios from 'axios'
 import router from '../router'
 export default {
   data () {
@@ -38,6 +37,9 @@ export default {
       })
   },
   methods:{
+  	publish:function () {
+  		
+  	}
   }
 }
 </script>
