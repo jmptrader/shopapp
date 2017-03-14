@@ -19,9 +19,8 @@ const store = new Vuex.Store({
       indexConf: {
         isHeader:true,// 是否显示头部
         isSearch: true, // 是否显示搜索
-        isLogo : true, // 是否显示logo
-        title: '' ,// 标题
         isFooter: true, // 是否显示底部
+        title: '' ,// 标题
       }
     }
   },

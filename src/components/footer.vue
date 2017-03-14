@@ -1,12 +1,12 @@
 <template>
-	<footer class="ui-footer ui-footer-stable ui-border-t foot-bg" v-show="isShowFooter">
+	<footer class="ui-footer ui-footer-stable ui-border-t app-bg-dark" >
 	    <ul class="ui-tiled icon-lists" >
-	        <li v-bind:class="{actived:item.isActive}" 
-	        @click="toggle(item,$index)"
-	        v-for="(item,$index) in items">
-	        	<router-link :to=item.toRouter>
-		        	<i :class="item.iconClass"></i>
-		        	<span class="foot-text" v-text='item.iconName'></span>
+	        <li v-for="(item,$index) in items">
+	        	<router-link
+            active-class='current'
+            :to=item.toRouter>
+		        	<i :class="[item.iconClass,'app-line20','app-color-white','app-top-margin']" ></i>
+		        	<span class="app-font-middle app-color-white" v-text='item.iconName'></span>
 	        	</router-link>
         	</li>
 	    </ul>
@@ -26,7 +26,7 @@ export default {
     			isActive:true
     		},
     		{
-    			iconClass:'ui-icon-add',
+    			iconClass:'ui-icon-add-group',
     			iconName:'发布',
     			toRouter:'/publish',
     			isActive:false
@@ -42,20 +42,8 @@ export default {
     }
   },
   computed:{
-    isShowFooter:function () {
-        return this.$store.state.comm.indexConf.isFooter
-      }
   },
   methods:{
-	  toggle:function (item,index) {
-      // 数据修改后，立刻生效
-  		this.$nextTick(function () {
-  			this.items.forEach(function (item) {
-  				Vue.set(item,'isActive',false);
-  			})
-  			Vue.set(item,'isActive',true);
-  		})
-	  }
   }
 }
 </script>

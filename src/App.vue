@@ -1,10 +1,14 @@
 <template>
   <div id="app">
-    <app-header></app-header>
-    <div class="app-content">
-      <router-view></router-view> 
+    <div class="app-fix-head"  v-show="isShowHeader">
+      <app-header></app-header>
     </div>
-    <app-footer></app-footer>
+    <transition enter-class='animated fadeInLeft' leave-class="animated fadeOutLeft">
+      <router-view></router-view>
+    </transition>
+    <div class="app-fix-foot"  v-show="isShowFooter">
+      <app-footer></app-footer>
+    </div>
   </div>
 </template>
 
@@ -23,6 +27,17 @@ export default {
       this.$router.push('/index')
     }
   },
+  watch: {
+
+  },
+  computed:{
+    isShowHeader:function () {
+      return this.$store.state.comm.indexConf.isHeader
+    },
+    isShowFooter:function () {
+      return this.$store.state.comm.indexConf.isFooter
+    }
+  },
   components:{
   	appHeader:Header,
     appFooter:Footer,
@@ -33,5 +48,6 @@ export default {
 </script>
 <style lang='scss'>
   @import "../static/frozenui/css/frozen.css";
+  @import '../static/animate/animate.css';
   @import '../static/css/app.scss';
 </style>

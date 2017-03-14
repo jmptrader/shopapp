@@ -1,8 +1,7 @@
 <template>
-<section class="ui-container ui-center">
-<div class="ui-form ui-border-t">
-	   <section class="ui-placehold-img">
-        <span style="background-image:url(../../static/img/logo.png)"></span>
+<div class="ui-form ui-border-t app-top-margin app-padding">
+	  <section class="ui-container ui-center">
+      <p class='app-color-main'>欢迎登陆</p>        
     </section>
     <div class="ui-form-item ui-form-item-show  ui-border-b">
         <label for="#">账号</label>
@@ -12,21 +11,21 @@
         <label for="#">密码</label>
         <input type="text" value=""  placeholder="输入密码" v-model="pwd">
     </div>
-    <div class="ui-btn-wrap">
-    	<button class="ui-btn-lg ui-btn-login" @click="go2login()">
+    <div class="ui-btn-wrap ">
+    	<button class="ui-btn-lg ui-btn-login app-color-dark app-bg-main" @click="go2login()">
         登录
       </button>
     </div>
     <div class="ui-row">
       <div class="ui-col ui-col-50">
         <div class="ui-flex ui-flex-pack-start ui-flex-align-center">
-          <router-link class="go2register" 
+          <router-link class="app-color-dark app-size-12" 
           to="/index">先逛逛</router-link>
         </div>
       </div>
       <div class="ui-col ui-col-50">
         <div class="ui-flex ui-flex-pack-end ui-flex-align-center">
-          <router-link class="go2register" 
+          <router-link class="app-color-dark app-size-12" 
           to="/regist">注册</router-link>
         </div>
       </div>
@@ -34,7 +33,6 @@
     <!-- 登录成功提示 -->
     <!-- <app-tips></app-tips> -->
 </div>
-</section>
 </template>
 
 <script>
