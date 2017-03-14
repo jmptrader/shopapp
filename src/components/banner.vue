@@ -8,7 +8,6 @@
 </div>
 </template>
 <script>
-// import frozen from '../../static/frozenui/js/frozen.js'
 export default{
 	data(){
 		return {

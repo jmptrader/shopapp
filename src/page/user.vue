@@ -60,19 +60,4 @@ export default {
   }
 }
 </script>
-<style lang='scss'>
-$maincolor:#FED000;
-$fontcolor:#333;
-.app-user{
-  width: 100%;
-  padding-top: 50px;
-}
-.app-user-name{
-  color: $fontcolor;
-  margin: 10px 0 50px;
-}
-.app-user-text{
-  text-align: left;
-  text-indent: 20px;
-}
-</style>
+

@@ -62,10 +62,4 @@ export default {
   }
 }
 </script>
-<style lang='scss'>
-$maincolor:#FED000;
-$fontcolor:#333;
-	.main-color{
-		color: $maincolor;
-	}
-</style>
+

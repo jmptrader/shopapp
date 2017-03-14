@@ -42,8 +42,4 @@ export default {
   }
 }
 </script>
-<style lang='scss'>
-.app-list{
-  margin-top: 45px;
-}
-</style>
+

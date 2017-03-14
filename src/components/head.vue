@@ -3,7 +3,6 @@
 		<div v-show='isShowSearch'>
 			<app-search></app-search>
 		</div>
-
     <div v-show='!isShowSearch'>
       <div class="ui-row">
         <div class="ui-col ui-col-10">
@@ -18,7 +17,6 @@
         </div>
       </div>
     </div>
-
 	</header>
 </template>
 
@@ -27,7 +25,6 @@ import Search from '@/components/search'
 export default {
   data () {
     return {
-      logourl:'../assets/logo.png'
     }
   },
   computed: {

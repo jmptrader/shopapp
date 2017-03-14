@@ -50,8 +50,4 @@ export default {
   }
 }
 </script>
-<style>
-	.app-index{
-		margin-top: 45px;
-	}
-</style>
+

@@ -88,18 +88,4 @@ export default {
   }
 }
 </script>
-<style lang='scss'>
-$maincolor:#FED000;
-$fontcolor:#333;
-  body{
-    background: white;
-  }
-	.ui-btn-login{
-		background: $maincolor;
-		color: $fontcolor;
-	}
-  .go2register{
-    color:$fontcolor;
-    font-size: 12px; 
-  }
-</style>
+
