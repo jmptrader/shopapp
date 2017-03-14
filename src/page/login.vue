@@ -1,5 +1,5 @@
 <template>
-<div class="ui-form ui-border-t app-top-margin app-padding">
+<div class="app-padding">
 	  <section class="ui-container ui-center">
       <p class='app-color-main'>欢迎登陆</p>        
     </section>
@@ -16,22 +16,11 @@
         登录
       </button>
     </div>
-    <div class="ui-row">
-      <div class="ui-col ui-col-50">
-        <div class="ui-flex ui-flex-pack-start ui-flex-align-center">
-          <router-link class="app-color-dark app-size-12" 
+    <div class="ui-flex ui-flex-pack-end">
+      <router-link class="app-color-dark app-font-big" 
           to="/index">先逛逛</router-link>
-        </div>
-      </div>
-      <div class="ui-col ui-col-50">
-        <div class="ui-flex ui-flex-pack-end ui-flex-align-center">
-          <router-link class="app-color-dark app-size-12" 
-          to="/regist">注册</router-link>
-        </div>
-      </div>
     </div>
-    <!-- 登录成功提示 -->
-    <!-- <app-tips></app-tips> -->
+    <app-tips :message=msgInfo v-if='showTip'></app-tips>
 </div>
 </template>
 
@@ -43,7 +32,8 @@ export default {
     return {
       name:'',
       pwd:'',
-      msg:'',
+      showTip:false,
+      msgInfo:'',
     }
   },
   created: function () {
@@ -54,6 +44,10 @@ export default {
       })
   },
   methods:{
+    showTips: function () {
+      this.showTips = true;
+      this.msgInfo = '登陆成功';
+    },
     go2login:function () {
       // 请求地址
       let url = this.$store.state.comm.apiUrl + 'islogin.json';
@@ -67,6 +61,7 @@ export default {
         // 返回值成功
        if(retObj.status == 200){
           if(retObj.data.status === 1){
+
             // 跳转
             console.log( "欢迎" + localStorage.getItem('result'));
             this.$store.commit('isLogin', retObj.data);

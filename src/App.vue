@@ -3,7 +3,7 @@
     <div class="app-fix-head"  v-show="isShowHeader">
       <app-header></app-header>
     </div>
-    <transition enter-class='animated fadeInLeft' leave-class="animated fadeOutLeft">
+    <transition enter-active-class='animated bounceInRight'>
       <router-view></router-view>
     </transition>
     <div class="app-fix-foot"  v-show="isShowFooter">
@@ -23,9 +23,12 @@ export default {
     }
   },
   created: function () {
-    if (this.$route.name === undefined) {
+    if (this.$router.name === undefined) {
       this.$router.push('/index')
     }
+  },
+  methods:{
+    
   },
   watch: {
 

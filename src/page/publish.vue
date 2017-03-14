@@ -1,23 +1,20 @@
 <template>
-	<div class="app-publish">
-		<div class="ui-form ui-border-t">
-		    <form >
-		        
-		        <div class="ui-form-item ui-form-item-textarea ui-border-b">
-		            <label>
-		                发表文字
-		            </label>
-		            <textarea placeholder="input text"></textarea>
-		        </div>
-		    </form>
-
-		    <div class="ui-btn-wrap">
-			    <button class="ui-btn-lg" @click="publish">
-			        确定
-			    </button>
-			</div>
-		</div>
-	</div>
+  <div class='app-padding'>
+    <div class="ui-form-item ui-form-item-textarea ui-border-b">
+        <label>
+            编辑文字
+        </label>
+        <textarea placeholder="input text"></textarea>
+    </div>
+    <div class="app-upload-img">
+      <div class="app-upload-btn">
+        <i class="ui-icon-thumb"></i>
+      </div>
+    </div>
+    <button class="ui-btn-lg app-bg-main app-color-dark " @click="publish">
+        确定
+    </button>
+  </div>
 </template>
 <script>
 import router from '../router'

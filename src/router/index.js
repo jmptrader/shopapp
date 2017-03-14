@@ -3,11 +3,9 @@ import Router from 'vue-router'
 
 import App from '../app'
 import Login from '@/page/login'  // 登陆
-import Regist from '@/page/regist' // 注册
 import User from '@/page/user'   // 用户中心
 import Publish from '@/page/publish' // 发布
 import Index from '@/page/index'  // 首页
-import List from '@/page/list'  // 菜谱
 import Menu from '@/page/menu'  // 菜谱
 Vue.use(Router)
 
@@ -23,9 +21,7 @@ const routes = [
       {path: '/User', name: 'user', component: User,meta:{requireAuth:true}},
       {path: '/publish', name: 'publish' , component: Publish,meta:{requireAuth:true}},
       {path: '/login', name: 'login', component: Login},
-      {path: '/regist', name: 'regist', component: Regist},
       {path: '/Menu' , name: 'menu' , component:Menu},
-      {path: '/List' , name: 'list' , component:List}
     ]
   }
 ]
@@ -46,7 +42,7 @@ const router = new Router({
 router.beforeEach(function (to,from,next) {
   // 判断该路由是否需要登录权限
   var userMsg = localStorage.getItem('userMsg')
-  if(to.path === '/user' || to.push === '/publish'){
+  if(to.path === '/user'){
     if(!userMsg){
       next({ path: '/login' })
     }
