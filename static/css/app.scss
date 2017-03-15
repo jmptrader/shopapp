@@ -6,7 +6,73 @@
 $main-color:#FFD100;
 $dark-color:#282828;
 
+.app-wbox{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+}
+
+.app-wbox-vertical{
+	-webkit-box-orient:vertical;
+	-moz-box-orient:vertical;
+	-o-box-orient:vertical;
+	box-orient:vertical;
+}
+.app-flex-1{
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+}
+
+.app-bbox{
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
+.app-line1{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.app-line2{
+  @extend .app-wbox;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+.app-ccenter{
+  @extend .app-wbox;
+  -webkit-box-align:center;
+  -moz-box-align:center;
+  box-align:center;
+  -webkit-box-pack:center;
+  -moz-box-pack:center;
+  box-pack:center;
+}
+.app-vcenter{
+  @extend .app-wbox;
+  -webkit-box-align:center;
+  -moz-box-align:center;
+  box-align:center;
+}
+.app-acenter{
+  @extend .app-wbox;
+  -webkit-box-pack:center;
+  -moz-box-pack:center;
+  box-pack:center;
+}
+
+
 #app{
+	.app-img{
+		display: block;
+		width: 100%;
+	}
 	.app-upload-img{
 		padding:10px 0;
 		.app-upload-btn{
@@ -45,9 +111,6 @@ $dark-color:#282828;
 	.app-bg-dark{
 		background:$dark-color;
 	}
-	.app-no-padding{
-		padding:0;
-	}
 	.app-font-middle{
 		font-size:0.7em;
 	}
@@ -63,8 +126,14 @@ $dark-color:#282828;
 	.app-bottom-margin{
 		margin-bottom:10px;
 	}
+	.app-no-padding{
+		padding:0;
+	}
 	.app-padding{
 		padding: 10px;
+	}
+	.app-padding-20{
+		padding:20px;
 	}
 	.app-in-block{
 		display: inline-block;

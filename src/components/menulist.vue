@@ -9,7 +9,6 @@
             <p class="ui-nowrap">这是内容，加ui-nowrap可以超出长度截断</p>
         </div>
     </li>
-    
 </ul>
 </template>
 <script>
