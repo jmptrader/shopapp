@@ -11,7 +11,7 @@
             ></i>
         </div>
         <div class="ui-col ui-col-80 ">
-          <p class="ui-flex ui-flex-pack-center app-color-dark">
+          <p class="ui-flex ui-flex-pack-center app-color-dark app-font-big">
           {{title}}
           </p>
         </div>

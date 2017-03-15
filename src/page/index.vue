@@ -15,7 +15,7 @@ export default {
       msg: 'index'
     }
   },
-  created:function () {
+  created () {
   	// head的修改
 	this.$store.commit('changeIndexConf', {
 		isFooter: true,

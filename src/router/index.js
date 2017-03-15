@@ -18,8 +18,8 @@ const routes = [
     // 动态路由匹配
       {path: '/index', name: 'index', component: Index},
       // 添加meta 这个字段表示，进入这个路由是需要登录的
-      {path: '/User', name: 'user', component: User,meta:{requireAuth:true}},
-      {path: '/publish', name: 'publish' , component: Publish,meta:{requireAuth:true}},
+      {path: '/User', name: 'user', component: User,meta:{requiresAuth:true}},
+      {path: '/publish', name: 'publish' , component: Publish,meta:{requiresAuth:true}},
       {path: '/login', name: 'login', component: Login},
       {path: '/Menu' , name: 'menu' , component:Menu},
     ]
@@ -34,21 +34,21 @@ const router = new Router({
 })
 /**
  * 全局导航钩子
- * @param  {[type]} to    [即将要进入的目标路由对象]
- * @param  {[type]} from  [当前导航正要离开的路由]
- * @param  {[type]} next) {             var userMsg [进行管道中的钩子]
- * @return {[type]}       [description]
  */
 router.beforeEach(function (to,from,next) {
-  // 判断该路由是否需要登录权限
   var userMsg = localStorage.getItem('userMsg')
-  if(to.path === '/user'){
-    if(!userMsg){
-      next({ path: '/login' })
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!userMsg) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
     }
+  } else {
+    next() 
   }
-  next()
-
 })
 
 

@@ -1,7 +1,7 @@
 <template>
 <div class="app-padding">
 	  <section class="ui-container ui-center">
-      <p class='app-color-main'>欢迎登陆</p>        
+      <img src="../assets/logo.png" alt=""><p class='app-font-middle app-color-dark'>痴鸭</p>   
     </section>
     <div class="ui-form-item ui-form-item-show  ui-border-b">
         <label for="#">账号</label>
@@ -49,8 +49,7 @@ export default {
       this.msgInfo = '登陆成功';
     },
     go2login:function () {
-      // 请求地址
-      let url = this.$store.state.comm.apiUrl + 'islogin.json';
+      let url = this.$store.state.comm.apiUrl + 'data.json';
       axios.get(url,{
         params:{
           uname:this.name,
@@ -58,20 +57,20 @@ export default {
         }
       })
       .then((retObj)=>{
-        // 返回值成功
        if(retObj.status == 200){
           if(retObj.data.status === 1){
+            console.log(retObj.data);
+            alert(retObj.data.message);
+            this.$store.commit('isLogin', retObj.data.result.user[1]);
 
-            // 跳转
-            console.log( "欢迎" + localStorage.getItem('result'));
-            this.$store.commit('isLogin', retObj.data);
+            // TODO:从发布状态进入，登录后怎样返回发布页
             this.$router.push({ path: 'user'})
           }else{
+            alert(retObj.data.message);
           }
        }
       })
       .catch(function (error) {
-        // 返回报错信息
         console.log(error);
       })
     }

@@ -9,11 +9,11 @@ const store = new Vuex.Store({
     // 公共
     comm: {
       loading: false,
-      back2top: false,
       login: {
         memberId: '',
         userData: ''
       },
+      menuData:'',
       apiUrl: 'http://localhost:8080/static/',
       imgUrl: 'http://localhost:8080/static/img',
       indexConf: {
@@ -41,7 +41,8 @@ const store = new Vuex.Store({
       Object.assign(state.comm.indexConf, data)
     },
     isLogin: (state,data) => {
-      localStorage.setItem('memberId',data.result.userid)
+      // 存入用户信息到本地
+      localStorage.setItem('memberId',data.userid)
       localStorage.setItem('userMsg',JSON.stringify(data))
       state.comm.login.memberId = localStorage.getItem('memberId')
       state.comm.login.userData = JSON.parse(localStorage.getItem('userMsg'))
@@ -51,6 +52,10 @@ const store = new Vuex.Store({
       localStorage.removeItem('userMsg')
       state.comm.login.memberId = ''
       state.comm.login.userData = ''
+    },
+    menuList :(state,data) => {
+      localStorage.setItem('menuData',JSON.stringify(data)); // 对象-> 字符串
+      state.comm.menuData = JSON.parse(localStorage.getItem('menuData')) // 字符串-> 对象
     }
   },
   actions: {

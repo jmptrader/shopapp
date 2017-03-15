@@ -1,11 +1,18 @@
 <template>
+<div>
+  <!-- list -->
+  <menu-list v-show='showlist'></menu-list>
+  <!-- detail -->
+  <menu-detail v-show='!showlist'></menu-detail>
+</div>
 </template>
 <script>
-import axios from 'axios'
-import router from '../router'
+import list from '@/components/menulist'
+import detail from '@/components/menudetail'
 export default {
   data () {
     return {
+      showlist: false,
     }
   },
   created: function () {
@@ -17,6 +24,10 @@ export default {
     })
   },
   methods:{
+  },
+  components:{
+    menuList: list,
+    menuDetail: detail
   }
 }
 </script>

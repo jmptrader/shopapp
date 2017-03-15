@@ -9,6 +9,7 @@
     <div class="app-fix-foot"  v-show="isShowFooter">
       <app-footer></app-footer>
     </div>
+    <!-- <app-loading></app-loading> -->
   </div>
 </template>
 

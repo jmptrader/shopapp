@@ -1,27 +1,48 @@
 <template>
 <ul class="ui-list ui-list-link ui-border-tb">
-    <li class="ui-border-t" @click='go2menu'>
-        <div class="ui-list-img">
-            <span style="background-image:url(http://placeholder.qiniudn.com/200x136)"></span>
+    <li class="ui-border-t" v-for="item in menus">
+        <div class="ui-list-img app-o-h">
+            <img class="app-img" :src="apiUrl + item.menuImg" alt="">
         </div>
         <div class="ui-list-info">
-            <h4 class="ui-nowrap">这是标题，加ui-nowrap可以超出长度截断</h4>
-            <p class="ui-nowrap">这是内容，加ui-nowrap可以超出长度截断</p>
+            <p class="ui-nowrap"> {{item.menuText}} </p>
         </div>
     </li>
 </ul>
 </template>
 <script>
+import axios from 'axios'
 export default{
 	data(){
 		return {
-
+            menus:[],
+            apiUrl: this.$store.state.comm.apiUrl,
 		}
 	},
+    created(){
+        this.fetchData()
+    },
+    watch:{
+
+    },
     methods: {
-        go2menu: function () {
-            this.$router.push('Menu');
-        }
+        fetchData () {
+          let url = this.$store.state.comm.apiUrl + 'data.json';
+          axios.get(url).then((retObj)=>{
+           if(retObj.status == 200){
+              if(retObj.data.status === 1){
+                this.menus = retObj.data.result.menu;
+                console.log(this.menus);
+                this.$store.commit('menuList', retObj.data.result.menu);
+              }else{
+                alert(retObj.data.message);
+              }
+           }
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+        },
     }
 }
 </script>
