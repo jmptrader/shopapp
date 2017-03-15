@@ -9,6 +9,7 @@
         "avatar":"img/avatar/001.jpg",
         "publish":[
           {
+            "menuId":"04",
             "menuImg":"img/menu/04.jpg",
             "menuText":"香味：点燃有香味的蜡烛，让仪式和宴会场地都弥漫着一种香味，不要太强烈，似有若无，不经意间嗅..",
             "isCollect": true
@@ -21,11 +22,13 @@
         "avatar":"img/avatar/002.jpg",
         "publish":[
           {
+            "menuId":"01",
             "menuImg":"img/menu/01.jpg",
             "menuText":"一组超精致的食物Icon设计，你一定要相信这些真的都是图标！最后那个奶油面包真的不能吃吗？",
             "isCollect": true
           },
           {
+            "menuId":"02",
             "menuImg":"img/menu/02.jpg",
             "menuText":"《小食光，一个人的美食手账》——用治愈的文字和插图来表达食物的温馨和美好，配合有趣简单实用的食谱，让每一个热爱生活的人都能感受美食带给我们的满满能量，感恩大自然的伟大馈赠！",
             "isCollect": false
@@ -35,21 +38,25 @@
     ],
     "menu":[
       {
+        "menuId":1,
         "menuImg":"img/menu/01.jpg",
         "menuText":"一组超精致的食物Icon设计，你一定要相信这些真的都是图标！最后那个奶油面包真的不能吃吗？",
         "isCollect": true
       },
       {
+        "menuId":"02",
         "menuImg":"img/menu/02.jpg",
         "menuText":"《小食光，一个人的美食手账》——用治愈的文字和插图来表达食物的温馨和美好，配合有趣简单实用的食谱，让每一个热爱生活的人都能感受美食带给我们的满满能量，感恩大自然的伟大馈赠！",
         "isCollect": false
       },
       {
+        "menuId":"03",
         "menuImg":"img/menu/03.jpg",
         "menuText":"给人一股茶叶飘香的味道, 淡淡的暖调子上一些绿色的点缀,不张扬又给人很清新的感觉",
         "isCollect": false
       },
       {
+        "menuId":"04",
         "menuImg":"img/menu/04.jpg",
         "menuText":"香味：点燃有香味的蜡烛，让仪式和宴会场地都弥漫着一种香味，不要太强烈，似有若无，不经意间嗅..",
         "isCollect": true

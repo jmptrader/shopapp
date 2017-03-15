@@ -1,7 +1,7 @@
 <template>
 <div>
   <!-- list -->
-  <menu-list v-show='showlist'></menu-list>
+  <menu-list v-show='showlist' ></menu-list>
   <!-- detail -->
   <menu-detail v-show='!showlist'></menu-detail>
 </div>
