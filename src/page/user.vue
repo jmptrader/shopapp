@@ -12,7 +12,7 @@
 
   <!-- 用户功能 -->
   <div class="app-bg-white app-wbox  app-padding ">
-    <div class="app-flex-1" @click='go2list'>
+    <div class="app-flex-1" @click='go2published'>
       <p class=" app-acenter"><i class="ui-icon-checked app-color-dark"></i></p>
       <p class="app-font-middle app-acenter">我的发布</p>
     </div>
@@ -85,10 +85,10 @@ export default {
       router.push('publish');
     },
     go2collect () {
-      router.push('menu');
+      router.push('my');
     },
-    go2list () {
-      router.push('menu');
+    go2published () {
+      router.push('my');
     }
   },
   components:{

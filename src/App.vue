@@ -35,10 +35,10 @@ export default {
 
   },
   computed:{
-    isShowHeader:function () {
+    isShowHeader() {
       return this.$store.state.comm.indexConf.isHeader
     },
-    isShowFooter:function () {
+    isShowFooter() {
       return this.$store.state.comm.indexConf.isFooter
     }
   },

@@ -6,6 +6,10 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   // 定义状态
   state: {
+    // menu
+    menu:{
+      menuData:'',
+    },
     // 公共
     comm: {
       loading: false,
@@ -13,7 +17,6 @@ const store = new Vuex.Store({
         memberId: '',
         userData: ''
       },
-      menuData:'',
       apiUrl: 'http://localhost:8080/static/',
       imgUrl: 'http://localhost:8080/static/img',
       indexConf: {
@@ -55,7 +58,7 @@ const store = new Vuex.Store({
     },
     menuList :(state,data) => {
       localStorage.setItem('menuData',JSON.stringify(data)); // 对象-> 字符串
-      state.comm.menuData = JSON.parse(localStorage.getItem('menuData')) // 字符串-> 对象
+      state.menu.menuData = JSON.parse(localStorage.getItem('menuData')) // 字符串-> 对象
     }
   },
   actions: {

@@ -8,7 +8,7 @@
 
 <script>
 import Banner from '@/components/banner'
-import menuList from '@/components/menulist'
+import MenuList from '@/components/menulist'
 export default {
   data () {
     return {
@@ -24,9 +24,11 @@ export default {
 		title: ''
 	})
   },
+  methods:{
+  },
   components:{
   	appBanner:Banner,
-  	appMenuList:menuList,
+  	appMenuList:MenuList,
   }
 }
 </script>

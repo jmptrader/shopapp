@@ -7,6 +7,7 @@ import User from '@/page/user'   // 用户中心
 import Publish from '@/page/publish' // 发布
 import Index from '@/page/index'  // 首页
 import Menu from '@/page/menu'  // 菜谱
+import My from '@/page/my'  // 我的
 Vue.use(Router)
 
 // 1、定义路由
@@ -21,7 +22,8 @@ const routes = [
       {path: '/User', name: 'user', component: User,meta:{requiresAuth:true}},
       {path: '/publish', name: 'publish' , component: Publish,meta:{requiresAuth:true}},
       {path: '/login', name: 'login', component: Login},
-      {path: '/Menu' , name: 'menu' , component:Menu},
+      {path: '/menu' , name: 'menu' , component:Menu},
+      {path: '/my' , name: 'my' , component:My},
     ]
   }
 ]

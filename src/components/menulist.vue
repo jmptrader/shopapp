@@ -15,37 +15,36 @@ import axios from 'axios'
 export default{
 	data(){
 		return {
-            menus:[],
-            apiUrl: this.$store.state.comm.apiUrl,
+      menus:[],
+      apiUrl: this.$store.state.comm.apiUrl,
 		}
 	},
-    created(){
-        this.fetchData()
+  created(){
+    this.fetchData()
+  },
+  watch:{
+  },
+  methods: {
+    fetchData () {
+      let url = this.$store.state.comm.apiUrl + 'data.json';
+      axios.get(url).then((retObj)=>{
+       if(retObj.status == 200){
+          if(retObj.data.status === 1){
+            this.menus = retObj.data.result.menu;
+            // console.log(this.menus);
+            this.$store.commit('menuList', retObj.data.result.menu);
+          }else{
+            alert(retObj.data.message);
+          }
+       }
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
     },
-    watch:{
-
-    },
-    methods: {
-        fetchData () {
-          let url = this.$store.state.comm.apiUrl + 'data.json';
-          axios.get(url).then((retObj)=>{
-           if(retObj.status == 200){
-              if(retObj.data.status === 1){
-                this.menus = retObj.data.result.menu;
-                // console.log(this.menus);
-                this.$store.commit('menuList', retObj.data.result.menu);
-              }else{
-                alert(retObj.data.message);
-              }
-           }
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-        },
-        go2menu(){
-          this.$router.push({ path: 'menu'})
-        }
+    go2menu(){
+      this.$router.push({ path: 'menu'})
     }
+  }
 }
 </script>

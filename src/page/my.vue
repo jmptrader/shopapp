@@ -1,19 +1,6 @@
 <template>
   <div class='app-padding'>
-    <div class="ui-form-item ui-form-item-textarea ui-border-b">
-        <label>
-            编辑文字
-        </label>
-        <textarea placeholder="input text"></textarea>
-    </div>
-    <div class="app-upload-img">
-      <div class="app-upload-btn">
-        <i class="ui-icon-thumb"></i>
-      </div>
-    </div>
-    <button class="ui-btn-lg app-bg-main app-color-dark " @click="publish">
-        确定
-    </button>
+    <app-menu-list></app-menu-list>
   </div>
 </template>
 <script>
@@ -24,6 +11,7 @@ export default {
     return {
       avatar:'',
       uname:'',
+      showrite:true,
     }
   },
   created: function () {
@@ -31,7 +19,7 @@ export default {
         isFooter: true,
         isHeader: true,
         isSearch: false,
-        title: '发布'
+        title: '我的'
       })
 
       
