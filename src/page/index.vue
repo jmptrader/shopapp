@@ -13,11 +13,9 @@ export default {
   data () {
     return {
       bannerInfo:[{
-        src:this.$store.state.comm.imgUrl + '/banner/1.jpeg'
+        src:this.$store.state.comm.imgUrl + '/banner/1.png'
       },{
-        src:this.$store.state.comm.imgUrl + '/banner/2.jpeg'
-      },{
-        src:this.$store.state.comm.imgUrl + '/banner/3.jpeg'
+        src:this.$store.state.comm.imgUrl + '/banner/2.png'
       }]
     }
   },
