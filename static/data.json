@@ -2,8 +2,7 @@
   "status":1,
   "message":"登录成功",
   "result":{
-    "user":[
-      {
+    "user":{
         "userid":"001",
         "username":"韩梅梅",
         "avatar":"img/avatar/001.jpg",
@@ -12,15 +11,10 @@
             "menuId":"04",
             "menuImg":"img/menu/04.jpg",
             "menuText":"香味：点燃有香味的蜡烛，让仪式和宴会场地都弥漫着一种香味，不要太强烈，似有若无，不经意间嗅..",
-            "isCollect": true
+            "isCollect": false
           }
-        ]
-      },
-      {
-        "userid":"002",
-        "username":"李雷",
-        "avatar":"img/avatar/002.jpg",
-        "publish":[
+        ],
+        "collect":[
           {
             "menuId":"01",
             "menuImg":"img/menu/01.jpg",
@@ -28,14 +22,13 @@
             "isCollect": true
           },
           {
-            "menuId":"02",
-            "menuImg":"img/menu/02.jpg",
-            "menuText":"《小食光，一个人的美食手账》——用治愈的文字和插图来表达食物的温馨和美好，配合有趣简单实用的食谱，让每一个热爱生活的人都能感受美食带给我们的满满能量，感恩大自然的伟大馈赠！",
-            "isCollect": false
+            "menuId":"04",
+            "menuImg":"img/menu/04.jpg",
+            "menuText":"香味：点燃有香味的蜡烛，让仪式和宴会场地都弥漫着一种香味，不要太强烈，似有若无，不经意间嗅..",
+            "isCollect": true
           }
         ]
-      }
-    ],
+      },
     "menu":[
       {
         "menuId":1,

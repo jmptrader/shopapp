@@ -85,10 +85,10 @@ export default {
       router.push('publish');
     },
     go2collect () {
-      router.push('my');
+      router.push({name:'my',params:{types:'collect'}});
     },
     go2published () {
-      router.push('my');
+      router.push({name:'my',params:{types:'publish'}});
     }
   },
   components:{

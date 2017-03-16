@@ -16,7 +16,8 @@ export default{
       menuPic:'',
       menuText:'',
       apiUrl: this.$store.state.comm.apiUrl,
-      islike: true
+      islike: true,
+      isLogin:localStorage.getItem('userMsg'),
     }
   },
   created(){
@@ -27,10 +28,11 @@ export default{
       title: '详情'
     })
     this.fetchData()
+
+    
   },
   watch:{
     '$route' (to, from) {
-      
     }
   },
   methods: {
@@ -54,10 +56,9 @@ export default{
       })
     },
     likeit(){
-      let userMsg = localStorage.getItem('userMsg');
-      if(!userMsg){
+      if(!this.isLogin){
         alert('未登录，请登录~')
-        // this.$router.push('login')
+        this.$router.push({ path: '/login'})
       }else{
         this.islike = !this.islike;
       }

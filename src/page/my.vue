@@ -1,6 +1,6 @@
 <template>
   <div class='app-padding'>
-    <app-menu-list></app-menu-list>
+    <app-menu-list :pathType="typeVal"></app-menu-list>
   </div>
 </template>
 <script>
@@ -11,17 +11,30 @@ export default {
     return {
       avatar:'',
       uname:'',
-      showrite:true,
+      typeVal:''
     }
   },
   created: function () {
       this.$store.commit('changeIndexConf', {
-        isFooter: true,
+        isFooter: false,
         isHeader: true,
         isSearch: false,
         title: '我的'
       })
-
+      
+      let pathType = this.$route.params.types;
+      
+      if(pathType  === 'publish'){
+        this.typeVal = 'publish';
+        this.$store.commit('changeIndexConf', {
+          title: '我的发布'
+        })
+      }else if(pathType === "collect"){
+        this.typeVal = 'collect';
+        this.$store.commit('changeIndexConf', {
+          title: '我的收藏'
+        })
+      }
       
   },
   methods:{

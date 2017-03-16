@@ -59,9 +59,8 @@ export default {
       .then((retObj)=>{
        if(retObj.status == 200){
           if(retObj.data.status === 1){
-            console.log(retObj.data);
             alert(retObj.data.message);
-            this.$store.commit('isLogin', retObj.data.result.user[1]);
+            this.$store.commit('isLogin', retObj.data.result.user);
 
             // TODO:从发布状态进入，登录后怎样返回发布页
             this.$router.push({ path: 'user'})

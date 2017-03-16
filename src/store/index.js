@@ -55,6 +55,8 @@ const store = new Vuex.Store({
       localStorage.removeItem('userMsg')
       state.comm.login.memberId = ''
       state.comm.login.userData = ''
+      localStorage.removeItem('menuData')
+      state.menu.menuData = ''
     },
     menuList :(state,data) => {
       localStorage.setItem('menuData',JSON.stringify(data)); // 对象-> 字符串
