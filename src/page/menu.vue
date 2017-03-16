@@ -29,17 +29,20 @@ export default{
     this.fetchData()
   },
   watch:{
-
+    '$route' (to, from) {
+      
+    }
   },
   methods: {
     fetchData () {
       let url = this.$store.state.comm.apiUrl + 'data.json';
+      let menuId = this.$route.params.id;
       axios.get(url).then((retObj)=>{
        if(retObj.status == 200){
           if(retObj.data.status === 1){
-            this.menuPic = retObj.data.result.menu[0].menuImg;
-            this.menuText = retObj.data.result.menu[0].menuText;
-            // console.log(this.menus);
+            this.menuPic = retObj.data.result.menu[menuId].menuImg;
+            this.menuText = retObj.data.result.menu[menuId].menuText;
+            this.islike = retObj.data.result.menu[menuId].isCollect;
             this.$store.commit('menuList', retObj.data.result.menu);
           }else{
             alert(retObj.data.message);
@@ -51,7 +54,13 @@ export default{
       })
     },
     likeit(){
-      this.islike = !this.islike;
+      let userMsg = localStorage.getItem('userMsg');
+      if(!userMsg){
+        alert('未登录，请登录~')
+        // this.$router.push('login')
+      }else{
+        this.islike = !this.islike;
+      }
     }
   }
 }

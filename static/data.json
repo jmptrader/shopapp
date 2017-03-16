@@ -41,7 +41,7 @@
         "menuId":1,
         "menuImg":"img/menu/01.jpg",
         "menuText":"一组超精致的食物Icon设计，你一定要相信这些真的都是图标！最后那个奶油面包真的不能吃吗？",
-        "isCollect": true
+        "isCollect": false
       },
       {
         "menuId":"02",
@@ -59,7 +59,7 @@
         "menuId":"04",
         "menuImg":"img/menu/04.jpg",
         "menuText":"香味：点燃有香味的蜡烛，让仪式和宴会场地都弥漫着一种香味，不要太强烈，似有若无，不经意间嗅..",
-        "isCollect": true
+        "isCollect": false
       }
     ]
   }  

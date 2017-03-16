@@ -22,7 +22,7 @@ const routes = [
       {path: '/User', name: 'user', component: User,meta:{requiresAuth:true}},
       {path: '/publish', name: 'publish' , component: Publish,meta:{requiresAuth:true}},
       {path: '/login', name: 'login', component: Login},
-      {path: '/menu' , name: 'menu' , component:Menu},
+      {path: '/menu/:id' , name: 'menu' , component:Menu},
       {path: '/my' , name: 'my' , component:My},
     ]
   }

@@ -1,6 +1,6 @@
 <template>
 <ul class="ui-list ui-list-link ui-border-tb">
-    <li class="ui-border-t" v-for="item in menus" @click='go2menu'>
+    <li class="ui-border-t" v-for="(item,index) in menus" @click='go2menu(index)'>
         <div class="ui-list-img app-o-h">
             <img class="app-img" :src="apiUrl + item.menuImg" alt="">
         </div>
@@ -42,8 +42,8 @@ export default{
         console.log(error);
       })
     },
-    go2menu(){
-      this.$router.push({ path: 'menu'})
+    go2menu(index){
+      this.$router.push({ path: 'menu/'+index})
     }
   }
 }
