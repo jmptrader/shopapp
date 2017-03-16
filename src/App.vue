@@ -3,7 +3,7 @@
     <div class="app-fix-head"  v-show="isShowHeader">
       <app-header></app-header>
     </div>
-    <transition enter-active-class='animated bounceInRight'>
+    <transition enter-active-class='animated fadeIn'>
       <router-view></router-view>
     </transition>
     <div class="app-fix-foot"  v-show="isShowFooter">

@@ -1,6 +1,6 @@
 <template>
 	<div>
-  	<app-banner></app-banner>	
+  	<app-banner :banner='bannerInfo'></app-banner>	
   	<app-menu-list></app-menu-list>
 	</div>
 </template>
@@ -12,7 +12,13 @@ import MenuList from '@/components/menulist'
 export default {
   data () {
     return {
-      msg: 'index'
+      bannerInfo:[{
+        src:this.$store.state.comm.imgUrl + '/banner/1.jpeg'
+      },{
+        src:this.$store.state.comm.imgUrl + '/banner/2.jpeg'
+      },{
+        src:this.$store.state.comm.imgUrl + '/banner/3.jpeg'
+      }]
     }
   },
   created () {
