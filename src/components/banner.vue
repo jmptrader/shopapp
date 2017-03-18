@@ -1,8 +1,8 @@
 <template>
 <swiper :options="swiperOption" ref="mySwiper">
     <!-- slides -->
-    <swiper-slide v-for='item in banner'>
-    	<img class='app-img' :src="item.src" alt="">
+    <swiper-slide v-for='(item , index) in banner' :key="index">
+    	<img class='app-img' :src="item.src"  alt="">
     </swiper-slide>
     <!-- Optional controls -->
     <div class="swiper-pagination"  slot="pagination"></div>

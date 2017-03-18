@@ -71,21 +71,37 @@ $dark-color:#282828;
 	overflow:hidden;
 }
 
+.app-relative{
+	position: relative;
+}
+.app-absolute{
+	position: absolute;
+	&.app-r-b{
+		right: 10px;
+		bottom:10px;
+	}
+}
+
+
 #app{
+	.app-textarea{
+		width: 100%;
+		height: 100px;
+		line-height: 20px;
+		resize:none;
+	}
+
 	.app-img{
 		display: block;
 		width: 100%;
 	}
 	.app-upload-img{
-		padding:10px 0;
-		.app-upload-btn{
-			border:1px solid #ddd;
-			width: 80px;
-			height: 80px;
-			text-align: center;
-			i{
-				line-height: 80px;
-			}
+		width: 100%;
+		height: 80px;
+		text-align: center;
+		background:white;
+		p{
+			color:#dedede;
 		}
 	}
 	.app-fix-head{

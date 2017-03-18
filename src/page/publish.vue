@@ -1,19 +1,17 @@
 <template>
-  <div class='app-padding'>
-    <div class="ui-form-item ui-form-item-textarea ui-border-b">
-        <label>
-            编辑文字
-        </label>
-        <textarea placeholder="input text"></textarea>
+  <div class=''>
+    <div class="app-relative app-bottom-margin  app-bbox app-padding app-bg-white">
+      <textarea name="" id="" class="app-textarea app-color-dark " placeholder="输入文字" v-model='message' ></textarea>
+      <span class="app-absolute app-r-b app-color-main">{{ message.length }}／100</span>
     </div>
-    <div class="app-upload-img">
-      <div class="app-upload-btn">
-        <i class="ui-icon-thumb"></i>
-      </div>
+    <div class="app-upload-img app-ccenter app-bottom-margin">
+      <p>点击上传图片</p>
     </div>
-    <button class="ui-btn-lg app-bg-main app-color-dark " @click="publish">
-        确定
-    </button>
+    <div class="app-padding">
+      <button class="ui-btn-lg app-bg-main app-color-dark  app-top-padding" @click="publish">
+          确定
+      </button>
+    </div>
   </div>
 </template>
 <script>
@@ -22,8 +20,7 @@ import MenuLsit from '@/components/menulist'
 export default {
   data () {
     return {
-      avatar:'',
-      uname:'',
+      message:''
     }
   },
   created: function () {
