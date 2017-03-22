@@ -27,10 +27,25 @@ export default{
   props:['pathType'],
   methods: {
     fetchData () {
+      this.$store.commit('dialog',{
+        isShow:true,
+        type:'loading', 
+        text:'加载中..', 
+        lazy:null
+      });
+
       let url = this.$store.state.comm.apiUrl + 'data.json';
       axios.get(url).then((retObj)=>{
        if(retObj.status == 200){
           if(retObj.data.status === 1){
+
+            this.$store.commit('dialog',{
+              isShow:false,
+              type:'loading', 
+              text:'加载中..', 
+              lazy:null
+            });
+
             if(this.pathType === 'collect'){
               // 我的收藏
               this.menus = JSON.parse(localStorage.getItem("userMsg")).collect;

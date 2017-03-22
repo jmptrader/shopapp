@@ -9,7 +9,7 @@
     <div class="app-fix-foot"  v-show="isShowFooter">
       <app-footer></app-footer>
     </div>
-    <app-loading v-if='isLoading'></app-loading>
+    <app-dialog v-if='isDialog'></app-dialog>
   </div>
 </template>
 
@@ -17,7 +17,7 @@
 import Header from '@/components/head'
 import Footer from '@/components/footer'
 import Index from '@/page/index'
-import Loading from '@/components/loading'
+import Dialog from '@/components/dialog'
 export default {
   data:function () {
     return {
@@ -28,11 +28,19 @@ export default {
       this.$router.push('/index')
     }
   },
-  methods:{
-    
-  },
+  methods:{},
   watch: {
-
+    isDialog: function () {
+      if(this.$store.state.comm.dialog.lazy){
+        setTimeout(()=>{
+          this.$store.commit('dialog',{isShow:false});
+          return this.$store.state.comm.dialog.isShow
+        },this.$store.state.comm.dialog.lazy)
+      }else{
+        return this.$store.state.comm.dialog.isShow
+      }
+    }
+    
   },
   computed:{
     isShowHeader() {
@@ -41,8 +49,8 @@ export default {
     isShowFooter() {
       return this.$store.state.comm.indexConf.isFooter
     },
-    isLoading(){
-      return this.$store.state.comm.loading
+    isDialog(){
+      return this.$store.state.comm.dialog.isShow
     }
 
   },
@@ -50,7 +58,7 @@ export default {
   	appHeader:Header,
     appFooter:Footer,
     appIndex:Index,
-  	appLoading:Loading,
+  	appDialog:Dialog,
   }
 }
 </script>

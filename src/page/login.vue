@@ -41,10 +41,19 @@ export default {
         title: '登录'
       })
 
+
   },
   methods:{
     go2login:function () {
-      this.$store.commit('isLoading',true);
+
+      // 加载数据
+      this.$store.commit('dialog',{
+        isShow:true,
+        type:'loading', 
+        text:'加载数据', 
+        // lazy:2000
+      });
+
       let url = this.$store.state.comm.apiUrl + 'data.json';
       axios.get(url,{
         params:{
@@ -53,14 +62,21 @@ export default {
         }
       })
       .then((retObj)=>{
-        
        if(retObj.status == 200){
           if(retObj.data.status === 1){
-            this.$store.commit('isLoading',false);
-            this.$store.commit('isLogin', retObj.data.result.user);
 
+            // 登录成功
+            this.$store.commit('dialog',{
+              isShow:true,
+              type:'ok', 
+              text:'登录成功', 
+              lazy:2000
+            });
+
+            this.$store.commit('isLogin', retObj.data.result.user);
             // TODO:从发布状态进入，登录后怎样返回发布页
             this.$router.push({ path: 'user'})
+
           }else{
             alert(retObj.data.message);
           }

@@ -12,7 +12,12 @@ const store = new Vuex.Store({
     },
     // 公共
     comm: {
-      loading: false,
+      dialog:{
+        isShow:false,
+        type:'loading', //  'ok' 'warning' 'loading'  三种状态
+        text:'加载中..', 
+        lazy:null,
+      },
       login: {
         memberId: '',
         userData: ''
@@ -32,8 +37,8 @@ const store = new Vuex.Store({
     /*
      * loading的显示
      * */
-    isLoading: (state, status) => {
-      state.comm.loading = status
+    dialog: (state, data) => {
+      Object.assign(state.comm.dialog, data)
     },
     /*
      * 修改header的信息

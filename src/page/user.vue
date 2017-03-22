@@ -30,21 +30,16 @@
     </div>
   </div>
 
-  <!-- loading -->
-  <loading v-if='isloading'></loading>
-
 </div>
 </template>
 <script>
 import axios from 'axios'
 import router from '../router'
-import loading from '@/components/loading'
 export default {
   data () {
     return {
       avatar:'',
       uname:'',
-      isloading: false
     }
   },
   created () {
@@ -73,7 +68,14 @@ export default {
       let url = this.$store.state.comm.apiUrl + 'data.json';
       axios.get(url).then(function (res) {
         if(res.data.status === 1){
-          alert('退出账号');
+
+          vm.$store.commit('dialog',{
+            isShow:true,
+            type:'ok', 
+            text:'退出成功', 
+            lazy:2000
+          });
+
           vm.$store.commit('logout');
           router.push('login');
         }
@@ -92,7 +94,6 @@ export default {
     }
   },
   components:{
-    loading,
   }
 }
 </script>
