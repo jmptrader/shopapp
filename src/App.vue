@@ -9,7 +9,7 @@
     <div class="app-fix-foot"  v-show="isShowFooter">
       <app-footer></app-footer>
     </div>
-    <!-- <app-loading></app-loading> -->
+    <app-loading v-if='isLoading'></app-loading>
   </div>
 </template>
 
@@ -40,7 +40,11 @@ export default {
     },
     isShowFooter() {
       return this.$store.state.comm.indexConf.isFooter
+    },
+    isLoading(){
+      return this.$store.state.comm.loading
     }
+
   },
   components:{
   	appHeader:Header,

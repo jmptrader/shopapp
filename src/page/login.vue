@@ -20,13 +20,11 @@
       <router-link class="app-color-dark app-font-big" 
           to="/index">先逛逛</router-link>
     </div>
-    <app-tips :message=msgInfo v-if='showTip'></app-tips>
 </div>
 </template>
 
 <script>
 import axios from 'axios'
-import Tips from '@/components/tips'
 export default {
   data () {
     return {
@@ -42,13 +40,11 @@ export default {
         isHeader:false,
         title: '登录'
       })
+
   },
   methods:{
-    showTips: function () {
-      this.showTips = true;
-      this.msgInfo = '登陆成功';
-    },
     go2login:function () {
+      this.$store.commit('isLoading',true);
       let url = this.$store.state.comm.apiUrl + 'data.json';
       axios.get(url,{
         params:{
@@ -57,9 +53,10 @@ export default {
         }
       })
       .then((retObj)=>{
+        
        if(retObj.status == 200){
           if(retObj.data.status === 1){
-            alert(retObj.data.message);
+            this.$store.commit('isLoading',false);
             this.$store.commit('isLogin', retObj.data.result.user);
 
             // TODO:从发布状态进入，登录后怎样返回发布页
@@ -75,7 +72,6 @@ export default {
     }
   },
   components:{
-    appTips:Tips,
   }
 }
 </script>
